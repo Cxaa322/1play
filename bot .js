@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "d";
+const prefix = "&";
 /////////////////////////
 ////////////////////////
 
@@ -99,7 +99,7 @@ client.on('message', async msg => {
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
 
-	if (command === `play`) {
+	if (command === `&play`) {
 		const voiceChannel = msg.member.voiceChannel;
         
         if (!voiceChannel) return msg.channel.send("انت لم تدخل روم صوتي");
@@ -207,7 +207,7 @@ client.on('message', async msg => {
         
         return msg.channel.send(`درجة الصوت الان**${args[1]}**`);
 
-	} else if (command === `np`) {
+	} else if (command === `&p`) {
 
 		if (!serverQueue) return msg.channel.send('There is no Queue!');
 		const embedNP = new Discord.RichEmbed()
@@ -262,8 +262,8 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 			textChannel: msg.channel,
 			voiceChannel: voiceChannel,
 			connection: null,
-			songs: [],
-			volume: 5,
+			songs: [5],
+			volume: 1,10
 			playing: true
 		};
 		queue.set(msg.guild.id, queueConstruct);
@@ -313,7 +313,7 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-    if (message.content === 'help') {
+    if (message.content === '&help') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك...**')
         .setDescription('**برفكس البوت (!)**')
@@ -343,14 +343,14 @@ client.on('message', message => {
 });
 
 client.on('ready', () => {
-   console.log(`----------------`);
+   console.log(`C:\Users\دحمان\Documents\GitHub\1play\bot .js`);
       console.log(`Desert Bot- Script By : EX Clan`);
-        console.log(`----------------`);
+        console.log(`C:\Users\دحمان\Documents\GitHub\1play\bot .js`);
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
-    console.log(`----------------`);
+    console.log(`C:\Users\دحمان\Documents\GitHub\1play\bot .js`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`dplay | Last Music`,"http://twitch.tv/Death Shop")
-client.user.setStatus("dnd")
+client.user.setGame(`&play | Last Music`,"http://twitch.tv/Death Shop")
+client.user.setStatus("&nd")
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN); "NDU1NjMxNDgxOTMxMzAwODY0.DtTMYw.BXjwXR-1pTb_9aLMsqqspijYEtc"
